@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laravel</title>
-</head>
-<body>
+<x-layout>
     {{-- <h1>{{$greetings}}</h1> Accessing a dynamic value --}} 
 
     {{-- @if($greetings === "hi")
         <p>Hello from if directives</p>
     @endif If directives --}}
 
-    <h2>Currently Available Ninjas</h2>
+    <h2>List of Students</h2>
     <a href="/subjects">Find Subjects</a>
 
     @foreach ($students as $student)
@@ -23,6 +15,4 @@
         </li>
     @endforeach
 
-    
-</body>
-</html>
+</x-layout>

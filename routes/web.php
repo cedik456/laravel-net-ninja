@@ -18,6 +18,10 @@ Route::get('/students', function () {
     return view('students.index', ["greetings" => "hello", "students" =>  $students]);
 });
 
+Route::get('/students/create', function() {
+    return view('students.create');
+});
+
 Route::get('/students/{id}', function($id) {
     return view('students.show', ["id" => $id]);
 });
