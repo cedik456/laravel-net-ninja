@@ -8,17 +8,21 @@
 </head>
 <body>
     {{-- <h1>{{$greetings}}</h1> Accessing a dynamic value --}} 
+
+    {{-- @if($greetings === "hi")
+        <p>Hello from if directives</p>
+    @endif If directives --}}
+
     <h2>Currently Available Ninjas</h2>
     <a href="/subjects">Find Subjects</a>
 
-    <ul>
+    @foreach ($students as $student)
         <li>
-            <a href="/students/{{$students[0]["id"]}}">{{$students[0]["name"]}}</a>
+            <p>{{$student['name']}}</p>
+            <a href="/students/{{$student['id']}}">More details</a>
         </li>
-        <li>
-            <a href="/students/{{$students[1]["id"]}}">{{$students[1]["name"]}}</a>
-        </li>
-    </ul>
+    @endforeach
+
     
 </body>
 </html>
