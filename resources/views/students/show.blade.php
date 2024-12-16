@@ -1,4 +1,4 @@
 <x-layout>
-    <h1>Students Id - {{$id}}</h1>
+    <h3>Students Id - {{$id}}</h3>
     
 </x-layout>

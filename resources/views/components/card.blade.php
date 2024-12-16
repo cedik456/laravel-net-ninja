@@ -1,9 +1,7 @@
-
-
 @props(['highlight' => false])
 
-<div class="flex gap-5 @class(['text-red-500' => $highlight, 'card'])">
+<div @class(['highlight' => $highlight, 'card'])>
     {{$slot}}
-    <a {{ $attributes }}>View details</a>
+    <a {{ $attributes }} class="btn">View details</a>
 </div>
 

@@ -6,11 +6,11 @@
     <title>Laravel</title>
     @vite('resources/css/app.css')
 </head>
-<body>
+<body class="px-8 py-10 text-center">
     <h1>Welcome to Laravel!</h1>
     <p>Click the button below to view the list of students</p>
 
-    <a href="/students" class="p-1 m-1 text-white bg-black border rounded-md btn">
+    <a href="/students" class="inline-block mt-4 btn">
         Find Students
     </a>
     

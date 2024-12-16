@@ -9,18 +9,18 @@
 </head>
 <body>
 
-    <header class="p-4 mx-10">
-        <nav class="flex justify-between">
+    <header>
+        <nav>
             <h1>DWCL</h1>
-            <div class="flex gap-3">
-                <a class="hover:underline" href="/students/create">Add Students</a>
-                <a class="hover:underline" href="/students">Students</a>
-                <a class="hover:underline" href="/subjects">Subjects</a>
+            <div class="flex gap-5">
+                <a class="hover:text-blue-500" href="/students/create">Add Students</a>
+                <a class="hover:text-blue-500" href="/students">Students</a>
+                <a class="hover:text-blue-500" href="/subjects">Subjects</a>
             </div>
         </nav>
     </header>
 
-    <main class="m-14">
+    <main class="container">
         {{$slot}}
     </main>
     
