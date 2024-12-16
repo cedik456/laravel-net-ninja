@@ -5,13 +5,13 @@
         <p>Hello from if directives</p>
     @endif If directives --}}
 
-    <h2>List of Students</h2>
-    <a href="/subjects">Find Subjects</a>
+    <h2 class="font-bold">List of Students</h2>
 
     @foreach ($students as $student)
-        <li>
+        <li class="flex">
+            <x-card href="/students/{{$student['id']}}" :highlight="$student['skill'] > 70 ">
             <p>{{$student['name']}}</p>
-            <a href="/students/{{$student['id']}}">More details</a>
+            </x-card>
         </li>
     @endforeach
 

@@ -11,8 +11,8 @@ Route::get('/', function () {
 Route::get('/students', function () {
 
     $students = [
-        ["name" => "Ced", "skill" => "Web Development", "id" => 1], 
-        ["name" => "Alex", "skill" => "Data Science", "id" => 2]
+        ["name" => "Ced", "skill" => 100, "id" => 1], 
+        ["name" => "Alex", "skill" => 65, "id" => 2]
     ];
 
     return view('students.index', ["greetings" => "hello", "students" =>  $students]);
