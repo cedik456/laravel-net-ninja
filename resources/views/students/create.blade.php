@@ -1,5 +1,4 @@
 <x-layout>
-<p>Add a Student</p>
 
 <form action="{{ route('students.store') }}" method="POST">
     @csrf

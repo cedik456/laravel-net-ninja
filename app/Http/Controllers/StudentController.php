@@ -11,7 +11,7 @@ class StudentController extends Controller
 {
     public function index() {
 
-        $students = Student::with('subject')->orderBy('created_at', 'desc')->paginate(5); // fetch students 
+        $students = Student::with('subject')->orderBy('created_at', 'desc')->paginate(4); // fetch students 
         return view('students.index', [ "students" =>  $students]);
     }
 
@@ -40,7 +40,7 @@ class StudentController extends Controller
         
         Student::create($validated);
 
-        return redirect()->route('students.index');
+        return redirect()->route('students.index')->with('success', 'Student Created');
     }
 
     public function destroy($id) {
@@ -48,6 +48,30 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
         $student->delete();
 
-        return redirect()->route('students.index');
+        return redirect()->route('students.index')->with('success', 'Student Deleted');
     }
+
+    public function edit($id)
+{
+    $student = Student::findOrFail($id);
+    $subjects = Subject::all();
+    return view('students.edit', compact('student', 'subjects'));
+}
+
+public function update(Request $request, $id)
+{
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'skill' => 'required|integer|min:0|max:100',
+        'bio' => 'required|string',
+        'subject_id' => 'required|exists:subjects,id',
+    ]);
+
+    $student = Student::findOrFail($id);
+    $student->update($validatedData);
+
+    return redirect()->route('students.index')->with('success', 'Student updated successfully!');
+}
+
+    
 }

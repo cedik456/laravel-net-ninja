@@ -1,4 +1,4 @@
 <x-layout>
-    <h3>Subject Section</h3>
+    <h2>Subject Section</h2>
 
 </x-layout>

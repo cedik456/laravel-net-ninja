@@ -17,8 +17,10 @@ class SubjectFactory extends Factory
      */
     public function definition(): array
     {
+        $subjects = ['Networking II', 'Web Standards', 'Social Ethics', 'Mobile Development', 'Machine Learning'];
+
         return [
-            'name' => fake()->word(),
+            'name' => fake()->randomElement($subjects),
             'location' => fake()->city(),
             'description' => fake()->paragraph(10),
         ];

@@ -19,6 +19,10 @@ Route::post('/students', [StudentController::class, 'store'])->name('students.st
 
 Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
 
+Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
+
+// This route is for submitting the update form (PUT request)
+Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
 
 
 // Subjects 
