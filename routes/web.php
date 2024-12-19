@@ -9,11 +9,11 @@ Route::get('/', function () {
 
 // Students
 
-Route::get('/students', [StudentController::class, 'index']); // for getting the students
+Route::get('/students', [StudentController::class, 'index'])->name('students.index'); // for getting the students
 
-Route::get('/students/create', [StudentController::class, 'create']); // for creating students
+Route::get('/students/create', [StudentController::class, 'create'])->name('students.create'); // for creating students
 
-Route::get('/students/{id}', [StudentController::class, 'show']); // for showing the details
+Route::get('/students/{id}', [StudentController::class, 'show'])->name('students.show'); // for showing the details
 
 
 
