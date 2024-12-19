@@ -11,5 +11,9 @@ class Subject extends Model
 
     /** @use HasFactory<\Database\Factories\SubjectFactory> */
     use HasFactory;
+
+    public function students() {
+        return $this->hasMany(Student::class);
+    }
 }
   

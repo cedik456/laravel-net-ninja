@@ -6,4 +6,12 @@
         <p><strong>About me:</strong></p>
         <p>{{$student->bio}}</p>
     </div>
+
+    <div class="px-4 pb-4 my-4 bg-white border-2 border-dashed rounded">
+        <h3>Subject Information</h3>
+        <p><strong>Subject name:</strong> {{$student->subject->name}}</p>
+        <p><strong>Location:</strong> {{$student->subject->location}}</p>
+        <p><strong>About the subject:</strong></p>
+        <p>{{$student->subject->description}}</p>
+    </div>
 </x-layout>

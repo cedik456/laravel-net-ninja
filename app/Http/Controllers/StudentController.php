@@ -9,13 +9,13 @@ class StudentController extends Controller
 {
     public function index() {
 
-        $students = Student::orderBy('created_at', 'desc')->paginate(7); // fetch students 
+        $students = Student::with('subject')->orderBy('created_at', 'desc')->paginate(10); // fetch students 
         return view('students.index', [ "students" =>  $students]);
     }
 
     public function show($id) {
 
-        $student = Student::findOrFail($id);
+        $student = Student::with('subject')->findOrFail($id);
         return view('students.show', ["student" => $student]);
 
     }
