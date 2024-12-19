@@ -3,9 +3,8 @@
 <form action="{{ route('students.store') }}" method="POST">
     @csrf
     
-    <h2>Create a New Ninja</h2>
+    <h2>Add a New Student</h2>
   
-    <!-- Students Name -->
     <label for="name">Name:</label>
     <input 
       type="text" 
@@ -15,7 +14,6 @@
       required
     >
   
-    <!-- Students Rate -->
     <label for="skill">Skill (0-100):</label>
     <input 
       type="number" 
@@ -25,7 +23,6 @@
       required
     >
   
-    <!-- Students Bio -->
     <label for="bio">Biography:</label>
     <textarea
       rows="5"
@@ -34,7 +31,6 @@
       required
     >{{old('bio')}}</textarea>
   
-    <!-- Select a course -->
     <label for="course_id">Course:</label>
     <select id="course_id" name="course_id" required>
       <option value="" disabled selected>Select a course</option>
