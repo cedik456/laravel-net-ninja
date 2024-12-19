@@ -1,7 +1,7 @@
 <x-layout>
 <p>Add a Student</p>
 
-<form action="" method="">
+<form action="{{ route('students.store') }}" method="POST">
     @csrf
     
     <h2>Create a New Ninja</h2>
@@ -35,9 +35,9 @@
     ></textarea>
   
     <!-- select a dojo -->
-    <label for="dojo_id">Dojo:</label>
-    <select id="dojo_id" name="dojo_id" required>
-      <option value="" disabled selected>Select a dojo</option>
+    <label for="subject_id">Subject:</label>
+    <select id="subject_id" name="subject_id" required>
+      <option value="" disabled selected>Select a Subject</option>
       @foreach($subjects as $subject)
       <option value="{{$subject->id}}">
         {{$subject->name}}
