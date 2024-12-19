@@ -35,13 +35,13 @@
           required
         >{{ old('bio', $student->bio) }}</textarea>
       
-        <!-- Select a Subject -->
-        <label for="subject_id">Subject:</label>
-        <select id="subject_id" name="subject_id" required>
-          <option value="" disabled>Select a Subject</option>
-          @foreach($subjects as $subject)
-          <option value="{{ $subject->id }}" {{ $subject->id == old('subject_id', $student->subject_id) ? 'selected' : ''}}>
-            {{$subject->name}}
+        <!-- Select a course -->
+        <label for="course_id">course:</label>
+        <select id="course_id" name="course_id" required>
+          <option value="" disabled>Select a course</option>
+          @foreach($courses as $course)
+          <option value="{{ $course->id }}" {{ $course->id == old('course_id', $student->course_id) ? 'selected' : ''}}>
+            {{$course->name}}
           </option>
           @endforeach
         </select>

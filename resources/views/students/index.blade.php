@@ -16,7 +16,7 @@
                     
                     <div>
                         <h3>{{ $student['name'] }}</h3>
-                        <p>{{ $student->subject->name }}</p>
+                        <p>{{ $student->course->name }}</p>
                     </div>
                 
                 </x-card>    

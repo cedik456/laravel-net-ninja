@@ -4,7 +4,7 @@
     {{$slot}}
     <div class="flex gap-2 mt-2">
         <!-- View Button -->
-        <a href="{{ $showRoute }}" class="btn btn-view">View</a>
+        <a href="{{ $showRoute }}" class="btn btn-view">View Details</a>
         
         <!-- Edit Button -->
         <form action="{{ $updateRoute }}" method="GET">

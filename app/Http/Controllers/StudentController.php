@@ -2,30 +2,29 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Course;
 use App\Models\Student;
-use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     public function index() {
 
-        $students = Student::with('subject')->orderBy('created_at', 'desc')->paginate(4); // fetch students 
+        $students = Student::with('course')->orderBy('created_at', 'desc')->paginate(4); // fetch students 
         return view('students.index', [ "students" =>  $students]);
     }
 
     public function show($id) {
 
-        $student = Student::with('subject')->findOrFail($id);
+        $student = Student::with('course')->findOrFail($id);
         return view('students.show', ["student" => $student]);
 
     }
 
     public function create() {
 
-        $subjects = Subject::all();
-        return view('students.create', ['subjects' => $subjects]);
+        $courses = Course::all();
+        return view('students.create', ['courses' => $courses]);
         
     }
 
@@ -35,7 +34,7 @@ class StudentController extends Controller
             'name' => 'required|string|max:255',
             'skill' => 'required|integer|min:0|max:100',
             'bio' => 'required|string|min:20|max:1000',
-            'subject_id' => 'required|exists:subjects,id'
+            'course_id' => 'required|exists:courses,id'
         ]);
         
         Student::create($validated);
@@ -54,8 +53,8 @@ class StudentController extends Controller
     public function edit($id)
 {
     $student = Student::findOrFail($id);
-    $subjects = Subject::all();
-    return view('students.edit', compact('student', 'subjects'));
+    $courses = Course::all();
+    return view('students.edit', compact('student', 'courses'));
 }
 
 public function update(Request $request, $id)
@@ -64,7 +63,7 @@ public function update(Request $request, $id)
         'name' => 'required|string|max:255',
         'skill' => 'required|integer|min:0|max:100',
         'bio' => 'required|string',
-        'subject_id' => 'required|exists:subjects,id',
+        'course_id' => 'required|exists:courses,id',
     ]);
 
     $student = Student::findOrFail($id);

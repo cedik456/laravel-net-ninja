@@ -6,7 +6,7 @@
     <h2>Create a New Ninja</h2>
   
     <!-- Students Name -->
-    <label for="name">Ninja Name:</label>
+    <label for="name">Name:</label>
     <input 
       type="text" 
       id="name" 
@@ -16,7 +16,7 @@
     >
   
     <!-- Students Rate -->
-    <label for="skill">Ninja Skill (0-100):</label>
+    <label for="skill">Skill (0-100):</label>
     <input 
       type="number" 
       id="skill" 
@@ -34,18 +34,18 @@
       required
     >{{old('bio')}}</textarea>
   
-    <!-- Select a Subject -->
-    <label for="subject_id">Subject:</label>
-    <select id="subject_id" name="subject_id" required>
-      <option value="" disabled selected>Select a Subject</option>
-      @foreach($subjects as $subject)
-      <option value="{{ $subject->id }}" {{ $subject->id == old('subject_id') ? 'selected' : ''}}>
-        {{$subject->name}}
+    <!-- Select a course -->
+    <label for="course_id">Course:</label>
+    <select id="course_id" name="course_id" required>
+      <option value="" disabled selected>Select a course</option>
+      @foreach($courses as $course)
+      <option value="{{ $course->id }}" {{ $course->id == old('course_id') ? 'selected' : ''}}>
+        {{$course->name}}
       </option>
       @endforeach
     </select>
   
-    <button type="submit" class="mt-4 btn">Create Ninja</button>
+    <button type="submit" class="mt-4 btn">Create Student</button>
   
     <!-- validation errors -->
 
