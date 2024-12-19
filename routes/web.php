@@ -19,6 +19,7 @@ Route::post('/students', [StudentController::class, 'store'])->name('students.st
 
 
 
+
 // Subjects 
 
 // Route without a controller (Closure)

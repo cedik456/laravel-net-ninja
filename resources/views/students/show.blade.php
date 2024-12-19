@@ -14,4 +14,6 @@
         <p><strong>About the subject:</strong></p>
         <p>{{$student->subject->description}}</p>
     </div>
+
+
 </x-layout>

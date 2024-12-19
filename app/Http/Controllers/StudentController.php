@@ -11,7 +11,7 @@ class StudentController extends Controller
 {
     public function index() {
 
-        $students = Student::with('subject')->orderBy('created_at', 'desc')->paginate(10); // fetch students 
+        $students = Student::with('subject')->orderBy('created_at', 'desc')->paginate(5); // fetch students 
         return view('students.index', [ "students" =>  $students]);
     }
 
