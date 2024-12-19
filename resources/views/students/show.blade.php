@@ -15,5 +15,11 @@
         <p>{{$student->subject->description}}</p>
     </div>
 
+    <form method="POST" action="{{ route('students.destroy', $student->id)  }}">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit" class="my-4 btn">Delete Student</button>
+    </form>
 
 </x-layout>

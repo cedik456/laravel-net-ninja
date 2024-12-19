@@ -17,6 +17,7 @@ Route::get('/students/{id}', [StudentController::class, 'show'])->name('students
 
 Route::post('/students', [StudentController::class, 'store'])->name('students.store'); // for storing data (web form)
 
+Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
 
 
 
