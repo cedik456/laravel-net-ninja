@@ -7,7 +7,7 @@
         <h2>Edit Ninja</h2>
       
         <!-- Students Name -->
-        <label for="name">Ninja Name:</label>
+        <label for="name">Student Name:</label>
         <input 
           type="text" 
           id="name" 
@@ -17,7 +17,7 @@
         >
       
         <!-- Students Rate -->
-        <label for="skill">Ninja Skill (0-100):</label>
+        <label for="skill">Student Skill (0-100):</label>
         <input 
           type="number" 
           id="skill" 
@@ -46,7 +46,7 @@
           @endforeach
         </select>
       
-        <button type="submit" class="mt-4 btn">Update Ninja</button>
+        <button type="submit" class="mt-4 btn">Update Student</button>
       
         <!-- validation errors -->
         @if ($errors->any()) 
