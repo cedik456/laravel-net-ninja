@@ -21,7 +21,7 @@ class StudentFactory extends Factory
         return [
             'name' => fake()->name(),
             'bio' => fake()->realText(500),
-            'skill' => fake()->numberBetween(1,100),
+            'grade' => fake()->randomFloat(2, 75, 100),
             'course_id' => Course::inRandomOrder()->first()->id,
         ];
     }

@@ -32,7 +32,7 @@ class StudentController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'skill' => 'required|integer|min:0|max:100',
+            'grade' => 'required|integer|min:0|max:100',
             'bio' => 'required|string|min:20|max:1000',
             'course_id' => 'required|exists:courses,id'
         ]);
@@ -61,7 +61,7 @@ public function update(Request $request, $id)
 {
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
-        'skill' => 'required|integer|min:0|max:100',
+        'grade' => 'required|integer|min:0|max:100',
         'bio' => 'required|string',
         'course_id' => 'required|exists:courses,id',
     ]);

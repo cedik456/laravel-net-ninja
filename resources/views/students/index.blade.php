@@ -10,7 +10,7 @@
         @foreach ($students as $student)
             <li>
                 <x-card 
-                    :highlight="$student['skill'] > 70"
+                    :highlight="$student['grade'] > 70"
                     :showRoute="route('students.show', $student->id)"
                     :updateRoute="route('students.edit', $student->id)">
                     

@@ -16,7 +16,7 @@ class CourseFactory extends Factory
      */
     public function definition(): array
     {
-        $courses = ['BSIT', 'BSCS', 'BSCE'];
+        $courses = ['BSIT', 'BSCS', 'BSCE', 'BSEE'];
 
         return [
             'name' => fake()->randomElement($courses),

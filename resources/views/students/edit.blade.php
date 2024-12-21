@@ -17,12 +17,12 @@
         >
       
         <!-- Students Rate -->
-        <label for="skill">Student Skill (0-100):</label>
+        <label for="grade">Student grade (0-100):</label>
         <input 
           type="number" 
-          id="skill" 
-          name="skill" 
-          value="{{ old('skill', $student->skill) }}" 
+          id="grade" 
+          name="grade" 
+          value="{{ old('grade', $student->grade) }}" 
           required
         >
       

@@ -14,12 +14,12 @@
       required
     >
   
-    <label for="skill">Skill (0-100):</label>
+    <label for="grade">Grade (0-100):</label>
     <input 
       type="number" 
-      id="skill" 
-      name="skill" 
-      value="{{ old('skill') }}" 
+      id="grade" 
+      name="grade" 
+      value="{{ old('grade') }}" 
       required
     >
   
